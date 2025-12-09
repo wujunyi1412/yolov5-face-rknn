@@ -11,22 +11,22 @@ python export.py --weights <your_model>.pt --onnx_rknn
 python -m onnxsim <your_model>.onnx <your_model>_sim.onnx
 
 
-### 2. 下载瑞芯微推理demo（https://github.com/airockchip/rknn_model_zoo/tree/v2.3.2）并解压。
+### 2. 下载瑞芯微推理demo（https://github.com/airockchip/rknn_model_zoo/tree/v2.3.2）
 cp -r yolov5-face-rknn/rknn_cpp/yolov5_face rknn_model_zoo-2.3.2/examples/
 cp yolov5-face-rknn/xxx_sim.onnx rknn_model_zoo-2.3.2/examples/yolov5_face/model/
 
 ### 3. onnx转rknn：
 cd rknn_model_zoo-2.3.2/examples/yolov5_face/python/
 python convert.py <onnx_model> <TARGET_PLATFORM> <dtype(optional)> <output_rknn_path(optional)>
-# 例如：
+例如：    
 python convert.py ../model/xxx_sim.onnx rk3588
 
 
 ### 4. 模型编译
 cd rknn_model_zoo-2.3.2
 export GCC_COMPILER=<GCC_COMPILER_PATH>  # 这里是自己的编译链
-./build-linux.sh -t <TARGET_PLATFORM> -a <ARCH> -d yolov5_face
-# 例如：
+./build-linux.sh -t <TARGET_PLATFORM> -a <ARCH> -d yolov5_face  
+例如：    
 ./build-linux.sh -t rk3588 -a aarch64 -d yolov5_face
   
   
