@@ -17,25 +17,26 @@ cp yolov5-face-rknn/xxx_sim.onnx rknn_model_zoo-2.3.2/examples/yolov5_face/model
 
 ### 3. onnx转rknn：
 cd rknn_model_zoo-2.3.2/examples/yolov5_face/python/
-
 python convert.py <onnx_model> <TARGET_PLATFORM> <dtype(optional)> <output_rknn_path(optional)>
-例如：python convert.py ../model/xxx_sim.onnx rk3588  
+# 例如：
+python convert.py ../model/xxx_sim.onnx rk3588
+
 
 ### 4. 模型编译
 cd rknn_model_zoo-2.3.2
-linux demo：
-export GCC_COMPILER=<GCC_COMPILER_PATH> 这里是自己的编译链
+export GCC_COMPILER=<GCC_COMPILER_PATH>  # 这里是自己的编译链
 ./build-linux.sh -t <TARGET_PLATFORM> -a <ARCH> -d yolov5_face
-例如 ./build-linux.sh -t rk3588 -a aarch64 -d yolov5_face
-
+# 例如：
+./build-linux.sh -t rk3588 -a aarch64 -d yolov5_face
+  
+  
 编译好的文件都在install里面
 
 ### 5. 板上运行
-将install文件夹用adb放到板子里面
 cd /userdata/rknn_yolov5_demo
-
 export LD_LIBRARY_PATH=./lib
 ./rknn_yolov5_demo model/yolov5.rknn model/bus.jpg
+
 
 
 
