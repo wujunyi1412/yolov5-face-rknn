@@ -29,7 +29,7 @@ except ImportError:
 class Detect(nn.Module):
     stride = None  # strides computed during build
     export_cat = False  # onnx export cat output
-    export_rknn = False     # onnx export for rknn 
+    export_rknn = True     # onnx export for rknn 
 
     def __init__(self, nc=80, anchors=(), ch=()):  # detection layer
         super(Detect, self).__init__()
