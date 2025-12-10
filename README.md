@@ -13,7 +13,8 @@ python export.py --weights <your_model>.pt --onnx_rknn
 python -m onnxsim <your_model>.onnx <your_model>_sim.onnx
 
 
-### 2. 下载瑞芯微推理demo（https://github.com/airockchip/rknn_model_zoo/tree/v2.3.2）
+### 2. 下载瑞芯微推理demo 
+[https://github.com/airockchip/rknn_model_zoo/tree/v2.3.2](https://github.com/airockchip/rknn_model_zoo/tree/v2.3.2)
 cp -r yolov5-face-rknn/rknn_cpp/yolov5_face rknn_model_zoo-2.3.2/examples/
 
 cp yolov5-face-rknn/xxx_sim.onnx rknn_model_zoo-2.3.2/examples/yolov5_face/model/
