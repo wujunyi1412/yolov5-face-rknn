@@ -1,9 +1,8 @@
 # YOLOv5-Face RKNN 推理 Demo
 
-```bash
 本项目为 [YOLOv5-Face](https://github.com/deepcam-cn/yolov5-face) 的 RKNN 适配版本，基于原作者的开源工作进行开发。  
 感谢原作者的贡献，并遵循原项目的开源许可（请参考原项目 LICENSE）。  
-```
+
 ## 推理流程
 
 ### 1. 导出 ONNX 模型
