@@ -37,7 +37,7 @@ python convert.py ../model/xxx_sim.onnx rk3588
 ```bash
 cd rknn_model_zoo-2.3.2
 
-export GCC_COMPILER=<GCC_COMPILER_PATH>  # 这里是自己的编译链
+export GCC_COMPILER=<GCC_COMPILER_PATH>  # 这里是自己的交叉编译链
 
 ./build-linux.sh -t <TARGET_PLATFORM> -a <ARCH> -d yolov5_face  
 
